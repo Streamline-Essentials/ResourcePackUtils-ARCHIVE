@@ -2,17 +2,12 @@ package tv.quaint.listeners;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.streamline.api.SLAPI;
 import net.streamline.api.events.EventProcessor;
 import net.streamline.api.events.StreamlineListener;
 import net.streamline.api.events.server.LoginCompletedEvent;
 import net.streamline.api.events.server.LogoutEvent;
 import net.streamline.api.interfaces.IStreamline;
-import net.streamline.api.messages.ProxyMessageEvent;
-import net.streamline.api.messages.ProxyMessageIn;
-import net.streamline.api.messages.ResourcePackMessageBuilder;
 import net.streamline.api.modules.ModuleUtils;
-import net.streamline.api.objects.SingleSet;
 import net.streamline.api.objects.StreamlineResourcePack;
 import net.streamline.api.savables.users.StreamlinePlayer;
 import tv.quaint.ResourcePackUtils;

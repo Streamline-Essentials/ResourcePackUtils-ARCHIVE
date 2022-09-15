@@ -1,14 +1,9 @@
 package tv.quaint.configs;
 
 import net.streamline.api.configs.ModularizedConfig;
-import net.streamline.api.messages.ProxyMessageHelper;
 import net.streamline.api.objects.StreamlineResourcePack;
 import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.codec.digest.DigestUtils;
 import tv.quaint.ResourcePackUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Configs extends ModularizedConfig {
     public Configs() {
@@ -41,5 +36,11 @@ public class Configs extends ModularizedConfig {
         reloadResource();
 
         return resource.getOrSetDefault("pack.network-handled", true);
+    }
+
+    public int connectWait() {
+        reloadResource();
+
+        return resource.getOrSetDefault("pack.wait", 20);
     }
 }
