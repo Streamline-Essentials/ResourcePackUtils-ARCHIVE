@@ -1,13 +1,16 @@
 package tv.quaint;
 
 import lombok.Getter;
+import net.streamline.api.events.StreamEventHandler;
 import net.streamline.api.modules.ModuleUtils;
 import net.streamline.api.modules.SimpleModule;
 import net.streamline.api.modules.dependencies.Dependency;
+import org.pf4j.PluginWrapper;
 import tv.quaint.configs.Configs;
 import tv.quaint.listeners.MainListener;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 public class ResourcePackUtils extends SimpleModule {
     @Getter
@@ -17,19 +20,18 @@ public class ResourcePackUtils extends SimpleModule {
     @Getter
     private static MainListener mainListener;
 
+    public ResourcePackUtils(PluginWrapper wrapper) {
+        super(wrapper);
+    }
+
     @Override
     public String identifier() {
         return "resource-pack-utils";
     }
 
     @Override
-    public List<String> authors() {
-        return List.of("Quaint");
-    }
-
-    @Override
-    public List<Dependency> dependencies() {
-        return List.of();
+    public ConcurrentSkipListSet<String> authors() {
+        return new ConcurrentSkipListSet<>(List.of("Quaint"));
     }
 
     @Override

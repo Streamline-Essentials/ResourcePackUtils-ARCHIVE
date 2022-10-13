@@ -15,7 +15,7 @@ import tv.quaint.runnables.PackTicker;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MainListener implements StreamlineListener {
+public class MainListener extends StreamlineListener {
     @Getter @Setter
     private static ConcurrentHashMap<StreamlinePlayer, Boolean> packedMap = new ConcurrentHashMap<>();
 

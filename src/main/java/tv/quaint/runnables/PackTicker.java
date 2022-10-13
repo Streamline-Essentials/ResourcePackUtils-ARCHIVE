@@ -39,7 +39,9 @@ public class PackTicker extends ModuleRunnable {
         switch (type) {
             case BUNGEE -> {
                 if (ResourcePackUtils.getConfigs().isNetworkHandled()) {
-                    SLAPI.getInstance().getProxyMessenger().sendMessage(ResourcePackMessageBuilder.build(player, pack));
+                    SLAPI.getInstance().getProxyMessenger().sendMessage(
+                            ResourcePackMessageBuilder.build(player,
+                                    SLAPI.getInstance().getPlatform().getServerType().equals(IStreamline.ServerType.PROXY), player, pack));
                 } else {
                     // do nothing;
                 }

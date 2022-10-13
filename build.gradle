@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'tv.quaint'
-version '1.1-SNAPSHOT'
+version '1.3-SNAPSHOT'
 
 project.ext {
     def dir = layout.buildDirectory.dir('C:\\Users\\nitra\\Dropbox\\Streamline\\Project\\Streamline\\api\\build\\libs')
@@ -36,6 +36,17 @@ java {
 jar.enabled = false
 shadowJar {
     relocate 'com.github.stefvanschie.inventoryframework', 'com.dndcraft.quaint.crpified.inventoryframework'
+
+    manifest {
+        attributes 'Plugin-Class': 'tv.quaint.StreamlineUtilities'
+        attributes 'Plugin-Id': 'streamline-utilities'
+        attributes 'Plugin-Version': version
+        attributes 'Plugin-Requires': ''
+        attributes 'Plugin-Dependencies': ''
+        attributes 'Plugin-Description': 'Utility Module for StreamlineCore.'
+        attributes 'Plugin-Provider': 'Quaint'
+        attributes 'Plugin-License': 'Apache License 2.0'
+    }
 
     destinationDirectory  = file("$rootDir/build/libs")
     archiveClassifier.set('')

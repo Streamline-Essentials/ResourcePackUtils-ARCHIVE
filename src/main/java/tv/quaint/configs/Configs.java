@@ -7,15 +7,22 @@ import tv.quaint.ResourcePackUtils;
 
 public class Configs extends ModularizedConfig {
     public Configs() {
-        super(ResourcePackUtils.getInstance(), "config.yml", false);
+        super(ResourcePackUtils.getInstance(), "config.yml", true);
+        init();
+    }
+
+    public void init() {
+        getResourcePack();
+        isNetworkHandled();
+        connectWait();
     }
 
     public StreamlineResourcePack getResourcePack() {
         reloadResource();
 
         String url = resource.getOrSetDefault("pack.url", "https://linktopack.com");
-        String prompt = resource.getOrSetDefault("pack.prompt", "&cYou need this pack to play!");
-        String hashString = resource.getOrSetDefault("pack.hash", "randomHashInHere");
+        String prompt = resource.getOrSetDefault("pack.prompt", "&eWe recommend using our pack.");
+        String hashString = resource.getOrSetDefault("pack.hash", "hashForPack");
         boolean force = resource.getOrSetDefault("pack.force", false);
         byte[] hash;
         try {
