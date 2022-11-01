@@ -11,6 +11,7 @@ public class Configs extends ModularizedConfig {
         init();
     }
 
+    @Override
     public void init() {
         getResourcePack();
         isNetworkHandled();
@@ -20,10 +21,10 @@ public class Configs extends ModularizedConfig {
     public StreamlineResourcePack getResourcePack() {
         reloadResource();
 
-        String url = resource.getOrSetDefault("pack.url", "https://linktopack.com");
-        String prompt = resource.getOrSetDefault("pack.prompt", "&eWe recommend using our pack.");
-        String hashString = resource.getOrSetDefault("pack.hash", "hashForPack");
-        boolean force = resource.getOrSetDefault("pack.force", false);
+        String url = getResource().getOrSetDefault("pack.url", "https://linktopack.com");
+        String prompt = getResource().getOrSetDefault("pack.prompt", "&eWe recommend using our pack.");
+        String hashString = getResource().getOrSetDefault("pack.hash", "hashForPack");
+        boolean force = getResource().getOrSetDefault("pack.force", false);
         byte[] hash;
         try {
             if (hashString.equals("")) {
@@ -42,12 +43,12 @@ public class Configs extends ModularizedConfig {
     public boolean isNetworkHandled() {
         reloadResource();
 
-        return resource.getOrSetDefault("pack.network-handled", true);
+        return getResource().getOrSetDefault("pack.network-handled", true);
     }
 
     public int connectWait() {
         reloadResource();
 
-        return resource.getOrSetDefault("pack.wait", 20);
+        return getResource().getOrSetDefault("pack.wait", 20);
     }
 }

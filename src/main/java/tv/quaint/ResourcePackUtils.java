@@ -1,10 +1,8 @@
 package tv.quaint;
 
 import lombok.Getter;
-import net.streamline.api.events.StreamEventHandler;
 import net.streamline.api.modules.ModuleUtils;
 import net.streamline.api.modules.SimpleModule;
-import net.streamline.api.modules.dependencies.Dependency;
 import org.pf4j.PluginWrapper;
 import tv.quaint.configs.Configs;
 import tv.quaint.listeners.MainListener;
@@ -44,5 +42,10 @@ public class ResourcePackUtils extends SimpleModule {
         configs = new Configs();
         mainListener = new MainListener();
         ModuleUtils.listen(mainListener, this);
+    }
+
+    @Override
+    public String getIdentifier() {
+        return identifier();
     }
 }
