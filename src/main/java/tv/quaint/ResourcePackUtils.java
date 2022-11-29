@@ -23,11 +23,6 @@ public class ResourcePackUtils extends SimpleModule {
     }
 
     @Override
-    public String identifier() {
-        return "resource-pack-utils";
-    }
-
-    @Override
     public ConcurrentSkipListSet<String> authors() {
         return new ConcurrentSkipListSet<>(List.of("Quaint"));
     }
@@ -42,10 +37,5 @@ public class ResourcePackUtils extends SimpleModule {
         configs = new Configs();
         mainListener = new MainListener();
         ModuleUtils.listen(mainListener, this);
-    }
-
-    @Override
-    public String getIdentifier() {
-        return identifier();
     }
 }
