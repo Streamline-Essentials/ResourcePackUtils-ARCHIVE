@@ -37,7 +37,7 @@ public class PackTicker extends ModuleRunnable {
         }
 
         switch (type) {
-            case BUNGEE -> {
+            case BUNGEE:
                 if (ResourcePackUtils.getConfigs().isNetworkHandled()) {
                     SLAPI.getInstance().getProxyMessenger().sendMessage(
                             ResourcePackMessageBuilder.build(player,
@@ -45,21 +45,21 @@ public class PackTicker extends ModuleRunnable {
                 } else {
                     // do nothing;
                 }
-            }
-            case VELOCITY -> {
+                break;
+            case VELOCITY:
                 if (ResourcePackUtils.getConfigs().isNetworkHandled()) {
                     ModuleUtils.sendResourcePack(pack, player);
                 } else {
                     // do nothing;
                 }
-            }
-            case SPIGOT -> {
+                break;
+            case SPIGOT:
                 if (ResourcePackUtils.getConfigs().isNetworkHandled()) {
                     // do nothing
                 } else {
                     ModuleUtils.sendResourcePack(pack, player);
                 }
-            }
+                break;
         }
 
         cancel();

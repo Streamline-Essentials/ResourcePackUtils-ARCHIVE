@@ -2,8 +2,8 @@ package tv.quaint.configs;
 
 import net.streamline.api.configs.ModularizedConfig;
 import net.streamline.api.objects.StreamlineResourcePack;
-import org.apache.commons.codec.binary.Hex;
 import tv.quaint.ResourcePackUtils;
+import tv.quaint.thebase.lib.apache.commons.codec.binary.Hex;
 
 public class Configs extends ModularizedConfig {
     public Configs() {
